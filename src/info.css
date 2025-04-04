@@ -1,0 +1,155 @@
+.middle_container{
+    height: 45% ;
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+.climate_view{
+   height: 100%;
+   width: 60%;
+   margin: 30px 0 0 20px;
+   background-color: white;
+   border-radius: 20px;
+   padding: 0 20px 0 20px ;
+   box-shadow: 
+    0px 1px 3px rgba(0, 0, 0, 0.2),  /* Main soft shadow */
+    0px 1px 1px rgba(0, 0, 0, 0.14), /* Subtle inner shadow */
+    0px 2px 1px rgba(0, 0, 0, 0.12); /* Additional depth */
+}
+ 
+ #current_weather{
+    font-family: 'Roboto', sans-serif;
+    color: #606060;
+} 
+#time{
+    text-align: right;
+}
+#current_weather span {
+    float: right;
+    color: black;
+    font-weight: 500;
+}
+.climate_info img{
+    height: 70px;
+    width: 70px;
+}
+.climate_info {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content:left;
+    gap: 40px;
+}
+.climate_temp{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+.description{
+    padding-top: 50px;
+}
+#short_description{
+    color: #606060;
+}
+#feels_like{
+    color: #2e2d2d;
+}
+.location_details{
+    height: 75%;
+    width: 30%;
+    margin: 40px 20px 0 0 ;
+    padding: 10px 10px 10px 25px  ;
+    background-color:white ;
+    border-radius: 20px;
+    box-shadow: 
+    0px 1px 3px rgba(0, 0, 0, 0.2),  /* Main soft shadow */
+    0px 1px 1px rgba(0, 0, 0, 0.14), /* Subtle inner shadow */
+    0px 2px 1px rgba(0, 0, 0, 0.12); /* Additional depth */
+}
+.lon_lat{
+    height: 85px;
+    width: 300px;
+    margin-left: 10px;
+    padding:1px 0 1px 20px;
+    background-color: #ebeaea;
+    border-radius: 10px;
+}
+.lon_lat p {
+    color: #514e4e;
+    font-weight:500;
+}
+.lon_lat p span{
+    color: #000;
+}
+hr{
+    margin-top: 20px;
+}
+#country_name{
+  margin: 30px 0 0 15px;
+}
+#highlights{
+    font-family: 'Roboto', sans-serif;
+    color: #606060;
+    margin:  30px 0 20px 50px ;
+}
+.info_box_weather{
+    display: flex;
+    gap: 20px;
+
+}
+.Info_Box{
+    width: 500px;
+    display: grid;
+    grid-template-columns: 250px 220px ;
+    grid-template-rows: 90px 90px ;
+    grid-gap: 20px 20px;
+    margin-left: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+.sun{
+    height: 200px;
+    width: 400px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+    0px 1px 3px rgba(0, 0, 0, 0.2),  /* Main soft shadow */
+    0px 1px 1px rgba(0, 0, 0, 0.14), /* Subtle inner shadow */
+    0px 2px 1px rgba(0, 0, 0, 0.12); /* Additional depth */
+    background-color:  white;
+}
+.inner_sun{
+    height: 140px;
+    width: 330px;
+    background-color: #ebeaea;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Stack p tags vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Ensure text is centered */
+    
+}
+
+.custom_progress_bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;  /* Adjust size */
+    height: 130px;
+    margin-top: 10px;
+    
+
+}
+.custom_progress_bar .CircularProgressbar-path {
+    stroke: #FFD700 !important; /* Yellow progress path */
+}
+
+.custom_progress_bar .CircularProgressbar-text {
+    fill: #000 !important; /* Black text  , !important, the library’s default styles override your CSS rule*/ 
+    font-size: 16px ;
+    font-weight: bold ;
+}

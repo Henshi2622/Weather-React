@@ -1,0 +1,5 @@
+html, body, #root {
+    height: 100vh;  /* Ensure full height */
+    margin: 0;
+    padding: 0;
+}
