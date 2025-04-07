@@ -7,6 +7,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 
 
+
 function SearchBox({updateInfo}) {
 
   let [city,setCity]= useState("");

@@ -2,6 +2,8 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
+import OutlinedCard from"./Forecast_card";
+import dayjs from "dayjs";
 
 export default function Cast(){
     let [city,setCity]= useState(" ");
@@ -11,25 +13,14 @@ export default function Cast(){
     const API_KEY = "4e878265109018f7ff2e6912c34dca52";
     const FORECAST_API = `https://api.openweathermap.org/data/2.5/forecast`;
 
+  
+
     let forecast = async ()=>{
         let f_response = await fetch(`${FORECAST_API}?q=${city}&appid=${API_KEY}`);
         let f_data =await f_response.json();
-        console.log(f_data);
 
-        // forecastByDate = {
-        //     "2025-04-07": [
-        //       { dt_txt: "2025-04-07 00:00:00", ... },
-        //       { dt_txt: "2025-04-07 03:00:00", ... },
-        //       { dt_txt: "2025-04-07 06:00:00", ... },
-        //       ...
-        //     ],
-        //     "2025-04-08": [
-        //       { dt_txt: "2025-04-08 00:00:00", ... },
-        //       ...
-        //     ]
-        //   };
-          
-        const forecastByDate ={}; // store entry according to date
+        // store entry according to date
+        const forecastByDate ={}; 
         f_data.list.forEach(element => {
             const date = element.dt_txt.split(" ")[0];
             if(!forecastByDate[date]) {
@@ -37,7 +28,20 @@ export default function Cast(){
             }
             forecastByDate[date].push(element);
         });
-        // console.log("Grouped forecast by date:", forecastByDate);
+        
+        // accesing each day entery
+        let daily_result=[]
+        for (const i in forecastByDate){
+            const element = forecastByDate[i];
+            const daily_data = element.find(e => e.dt_txt.includes("12:00:00"));
+            daily_result.push(daily_data);
+        }
+        console.log(daily_result);
+
+        let forecast_info={
+            temp : daily_result[1].main.temp
+        }
+
     }
     let handleChange= (evt)=>{
         setCity(evt.target.value);
@@ -53,8 +57,14 @@ export default function Cast(){
         }
         
     }
+    const dates = Array.from({ length: 5 }, (_, i) => 
+        dayjs().add(i + 1, "day").format("DD-MM-YYYY")
+      );
+        
+    
 
     return(
+        <>
         <div className="SearchBox">
           <form onSubmit={handleSubmit}> 
             <TextField id="standard-basic" label="Enter City  " variant="standard"  required  value={city}
@@ -66,5 +76,10 @@ export default function Cast(){
             {error && <p style={{color:"red"}}> No Such Place Exist!</p>}
           </form>
         </div>
+        <div className='daily_weather'>
+            <OutlinedCard date={dates[1]}  />
+        </div>
+        </>
+        
     )
 }

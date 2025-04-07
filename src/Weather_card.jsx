@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Weather_card ({ label,value ,icon , isHighlighted }){
+export default function Weather_card ({ label,value,icon}){
     return(
         <Card sx={{  maxWidth: 347, maxHeight : 200}}>
         
