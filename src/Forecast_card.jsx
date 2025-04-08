@@ -8,20 +8,15 @@ import Typography from '@mui/material/Typography';
 
 
 
-export default function OutlinedCard({date}) {
+export default function OutlinedCard({date ,info}) {
     
       const card = (
         <React.Fragment>
           <CardContent>
             <Typography variant="h5" component="div">
-              {date}
+              {`${info.temp} °C`}
             </Typography>
-            <Typography sx={{ color: 'text.secondary', mb: 1.5 }}></Typography>
-            <Typography variant="body2">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
-            </Typography>
+            <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>{date} </Typography>
           </CardContent >
           <CardActions >
             <Button size="small"  >Learn More</Button>
@@ -29,7 +24,7 @@ export default function OutlinedCard({date}) {
         </React.Fragment>
       );
     return (
-    <Box sx={{ minWidth: 275 }}>
+    <Box sx={{ maxWidth: 275 }}>
       <Card variant="outlined">{card}</Card>
     </Box>
   );

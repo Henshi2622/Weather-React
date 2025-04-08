@@ -1,5 +1,6 @@
 .middle_container{
     height: 45% ;
+    width: 95%;
     display: flex;
     justify-content: start;
     gap: 30px;

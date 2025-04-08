@@ -32,3 +32,6 @@
 .list_item:hover {
     background-color: rgba(110, 91, 110, 0.4);
 }
+.content{
+    width: 100%;
+}
